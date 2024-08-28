@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="./css/all.css" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Upload Images</title>
+    <style>
+        /* Modal styles */
+        #pathModal {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #fff;
+            padding: 20px;
+            border: 1px solid #ddd;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+
+        #pathModal input {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+
+        #pathModal button {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body id="body">
+    <div id="btdiv">
+        <button id="uploadBtn" class="button button-primary"> 
+            <div class="svg-wrapper-1">
+                <div class="svg-wrapper">
+                    <svg id="uploadid"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        width="30"
+                        height="30"
+                        class="icon">
+                        <path
+                            d="M22,15.04C22,17.23 20.24,19 18.07,19H5.93C3.76,19 2,17.23 2,15.04C2,13.07 3.43,11.44 5.31,11.14C5.28,11 5.27,10.86 5.27,10.71C5.27,9.33 6.38,8.2 7.76,8.2C8.37,8.2 8.94,8.43 9.37,8.8C10.14,7.05 11.13,5.44 13.91,5.44C17.28,5.44 18.87,8.06 18.87,10.83C18.87,10.94 18.87,11.06 18.86,11.17C20.65,11.54 22,13.13 22,15.04Z">
+                        </path>
+                    </svg>
+                </div>
+            </div>
+            <span id="bt1span">上传图片</span>
+        </button>
+        
+	
+		
+        <!-- 删除设置路径的按钮 -->
+    </div>
+    
+    <input type="file" id="fileInput" multiple style="display: none;" />
+    
+    <!-- 删除设置路径的 Modal -->
+    <div id="pathModal">
+        <input type="text" id="targetPath" placeholder="Enter target path on server" />
+        <button id="savePathBtn">保存路径</button>
+        <button id="closePathModal">关闭</button>
+    </div>
+    
+    <div id="setting">
+        <button class="setting-btn">
+            <span class="bar bar1"></span>
+            <span class="bar bar2"></span>
+            <span class="bar bar1"></span>
+        </button>
+    </div>
+	
+	
+
+    <!-- 引入外部 JS 文件 -->
+    <script src="./js/app.js"></script>
+</body>
+</html>

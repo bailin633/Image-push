@@ -1,0 +1,361 @@
+#body{
+	background-image: url(../img/bg.jpg);
+	background-size: cover;
+}
+
+#btdiv{
+	display: flex;
+	justify-content: center;  /* 水平居中 */
+	align-items: center;       /* 垂直居中 */
+	height: 97vh;             /* 让容器高度为视口高度 */
+}
+
+#uploadBtn {
+    font-family: inherit;
+      font-size: 20px;
+      background: #212121;
+      color: white;
+      fill: rgb(155, 153, 153);
+      padding: 0.7em 1em;
+      padding-left: 0.9em;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      border: none;
+      border-radius: 15px;
+      font-weight: 1000;
+	  user-select: none; /* 禁止用户选择 */
+}
+#bt1span{
+	user-select: none; /* 禁止用户选择 */
+	display: block;
+	  margin-left: 0.3em;
+	  transition: all 0.3s ease-in-out;
+}
+#uploadid{
+	display: block;
+	transform-origin: center center;
+	transition: transform 0.3s ease-in-out;
+}
+#uploadBtn:hover{
+	background: #000;
+}
+#uploadBtn: .svg-wrapper{
+	transform: scale(1.25);
+	transition: 0.5s linear;
+}
+#uploadBtn:hover svg{
+	transform: translateX(2.15em) scale(1.1);
+	fill: #fff;
+}
+#uploadBtn:hover span{
+	opacity: 0;
+	transition: 0.5s linear;
+}
+#uploadBtn:active{
+	transform: scale(0.95);
+}
+
+#fileInput {
+display: none;
+}
+
+
+
+.setting-btn {
+  position: absolute;
+  top: 10px; /* 距离页面顶部10px */
+  right: 10px; /* 距离页面右边10px */
+  width: 45px;
+  height: 45px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  background-color: rgb(129, 110, 216);
+  border-radius: 10px;
+  cursor: pointer;
+  border: none;
+  box-shadow: 0px 0px 0px 2px rgb(212, 209, 255);
+}
+
+.bar {
+  width: 50%;
+  height: 2px;
+  background-color: rgb(229, 229, 229);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  border-radius: 2px;
+}
+.bar::before {
+  content: "";
+  width: 2px;
+  height: 2px;
+  background-color: rgb(126, 117, 255);
+  position: absolute;
+  border-radius: 50%;
+  border: 2px solid white;
+  transition: all 0.3s;
+  box-shadow: 0px 0px 5px white;
+}
+.bar1::before {
+  transform: translateX(-4px);
+}
+.bar2::before {
+  transform: translateX(4px);
+}
+.setting-btn:hover .bar1::before {
+  transform: translateX(4px);
+}
+.setting-btn:hover .bar2::before {
+  transform: translateX(-4px);
+}
+
+
+.input1 {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 1em 0 1em 0;
+  max-width: 190px;
+  position: relative;
+}
+
+.input1 input {
+  font-size: 100%;
+  padding: 0.8em;
+  outline: none;
+  border: 2px solid rgb(200, 200, 200);
+  background-color: transparent;
+  border-radius: 20px;
+  width: 100%;
+}
+
+
+
+.input1 :is(input:focus, input:valid)~label {
+  transform: translateY(-50%) scale(.9);
+  margin: 0em;
+  margin-left: 1.3em;
+  padding: 0.4em;
+  background-color: #e8e8e8;
+}
+
+.input1 :is(input:focus, input:valid) {
+  border-color: rgb(150, 150, 200);
+}
+
+
+
+#pathModal {
+    display: none; /* 默认隐藏 */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 15px; /* 设置圆角 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 修改阴影效果 */
+    z-index: 1000;
+    width: 400px; /* 设置弹出框宽度 */
+    max-width: 90%; /* 最大宽度为视口宽度的90% */
+    height: 160px; /* 设置弹出框高度 */
+    box-sizing: border-box; /* 包括内边距和边框在内的宽度计算 */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#pathModal input {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+}
+
+#pathModal button {
+    margin-top: 10px;
+}
+
+#savePathBtn {
+    margin-left: 10px; /* 按钮与输入框之间的距离 */
+    color: #090909;
+    padding: 8px 16px;
+    font-size: 15px;
+    border-radius: 0.5em;
+    background: #e8e8e8;
+    cursor: pointer;
+    border: 1px solid #e8e8e8;
+    transition: all 0.3s;
+    box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #ffffff;
+    user-select: none; /* 禁止用户选择 */
+}
+
+#savePathBtn:active {
+    color: #666;
+    box-shadow:
+        0px 0px 0px #c5c5c5,
+        0px 0px 0px #ffffff,
+        inset 4px 4px 12px #c5c5c5,
+        inset -4px -4px 12px #ffffff;
+		user-select: none; /* 禁止用户选择 */
+}
+
+#closePathModalBtn {
+    margin-left: 200px;
+    color: #090909;
+    padding: 3px 0.6px;
+    font-size: 15px;
+    border-radius: 0.5em;
+    background: #e8e8e8;
+    cursor: pointer;
+    border: 1px solid #e8e8e8;
+    transition: all 0.3s;
+    box-shadow:
+        6px 6px 12px #c5c5c5,
+        -6px -6px 12px #ffffff;
+    user-select: none; /* 禁止用户选择 */
+}
+
+#closePathModalBtn:active {
+    color: #666;
+    box-shadow:
+        0px 0px 0px #c5c5c5,
+        0px 0px 0px #ffffff,
+        inset 4px 4px 12px #c5c5c5,
+        inset -4px -4px 12px #ffffff;
+}
+
+#input-container{
+	display: flex;
+	align-items: center;
+	
+}
+#target
+{
+	flex-grow: 1; /* 让输入框占据剩余空间 */
+	padding: 8px;
+	box-sizing: border-box;
+	border: none;
+	padding: 1rem;
+	border-radius: 1rem;
+	background: #e8e8e8;
+	box-shadow: 20px 20px 60px #c5c5c5,
+			-20px -20px 60px #ffffff;
+	transition: 0.3s;
+	  outline: none;
+}
+#targetPathInput:focus {
+    outline: none; /* 移除默认的黄色高亮边框 */
+    outline-color: transparent; /* 如果想保持更高的兼容性，也可以设置为透明 */
+    background: #e8e8e8;
+	box-shadow: inset 20px 20px 60px #c5c5c5,
+	            inset -20px -20px 60px #ffffff;
+	transition: 0.3s;
+    
+}
+
+#divbackbtn{
+	display: flex;
+}
+#backBtn{
+	margin-top: 300px;
+	margin-left: 280px;
+	color: #090909;
+	  padding: 8px 16px;
+	  font-size: 15px;
+	  border-radius: 0.5em;
+	  background: #e8e8e8;
+	  cursor: pointer;
+	  border: 1px solid #e8e8e8;
+	  transition: all 0.3s;
+	  box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #ffffff;
+	  
+}
+#backBtn:active{
+	color: #666;
+	box-shadow: inset 4px 4px 12px #c5c5c5, inset -4px -4px 12px #ffffff;
+}
+
+#settingbody{
+	 overflow: hidden; /* 禁用滚动 */
+	margin: 0; /* 去除默认的边距 */
+}
+
+#input-label{
+	display: block;
+	    font-weight: bold;
+	    margin-bottom: 5px;
+	    color: black; /* 可以调整为你喜欢的颜色 */
+		user-select: none;
+}
+#serverAddressInput{
+	 flex-grow: 1; /* 输入框占据剩余空间 */
+	 width: 100%;
+	   max-width: 125px;
+	   height: 18px;
+	   padding: 12px;
+	   border-radius: 12px;
+	   border: 1.5px solid lightgrey;
+	   outline: none;
+	   transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+	   box-shadow: 0px 0px 20px -18px;
+}
+
+#pathInput{
+	width: 100%;
+	  max-width: 213px;
+	  height: 18px;
+	  padding: 12px;
+	  border-radius: 12px;
+	  border: 1.5px solid lightgrey;
+	  outline: none;
+	  transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+	  box-shadow: 0px 0px 20px -18px;
+}
+#pathInput:hover{
+	border: 2px solid lightgrey;
+	  box-shadow: 0px 0px 20px -17px;
+}
+#pathInput:active{
+	transform: scale(0.95);
+}
+#pathInput:focus{
+	border: 2px solid grey;
+}
+#portInput{
+	width: 100%;
+	  max-width: 50px;
+	  height: 18px;
+	  padding: 12px;
+	  border-radius: 12px;
+	  border: 1.5px solid lightgrey;
+	  outline: none;
+	  transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+	  box-shadow: 0px 0px 20px -18px;
+}
+
+#saveServerBtn{
+	margin-left: 10px; /* 按钮与输入框之间的距离 */
+	color: #090909;
+	padding: 8px 16px;
+	font-size: 15px;
+	border-radius: 0.5em;
+	background: #e8e8e8;
+	cursor: pointer;
+	border: 1px solid #e8e8e8;
+	transition: all 0.3s;
+	box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #ffffff;
+	user-select: none; /* 禁止用户选择 */
+}
+#saveServerBtn:active{
+	color: #666;
+	box-shadow:
+	    0px 0px 0px #c5c5c5,
+	    0px 0px 0px #ffffff,
+	    inset 4px 4px 12px #c5c5c5,
+	    inset -4px -4px 12px #ffffff;
+		user-select: none; /* 禁止用户选择 */
+}
