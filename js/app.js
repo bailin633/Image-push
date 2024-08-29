@@ -43,6 +43,7 @@ window.onload = function() {
 
     // 处理设置按钮点击事件
     document.getElementById('setting').addEventListener("click", function() {
-        window.location.href = './setting.html';
-    });
+        window.location.href = './setting.html';  
+		});
+
 };
