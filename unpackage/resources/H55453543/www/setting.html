@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="./css/all.css" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Settings</title>
+</head>
+<body id="settingbody">
+    <h2>设置页面</h2>
+
+    <label for="pathInput" id="input-label">存储路径:</label>
+    <!-- 输入框和保存路径按钮 -->
+    <div class="input-container">
+        <input type="text" id="pathInput" required="" autocomplete="off" placeholder="输入远程存储路径" />
+        <button id="savePathBtn" class="button button-primary">保存路径</button>
+    </div>
+
+    <label for="serverAddressInput" id="input-label">服务器地址:</label>
+    <!-- 地址和端口输入框 -->
+    <div class="input-server">
+        <input type="text" id="serverAddressInput" required="" autocomplete="off" placeholder="输入服务器地址" />
+        <span id="colon">:</span>
+        <input type="number" id="portInput" min="1" max="65535" placeholder="端口" />
+        <button id="saveServerBtn" class="button button-primary">保存地址</button>
+    </div>
+
+    <div id="divbackbtn">
+        <button id="backBtn" class="button button-primary">返回</button>
+    </div>
+
+    <!-- 返回功能的脚本 -->
+    <script>
+        document.getElementById('backBtn').addEventListener('click', function() {
+            window.location.href = 'index.html'; // 返回到首页
+        });
+    </script>
+
+    <!-- 引入外部 JS 文件 -->
+    <script src="./js/setting.js"></script>
+</body>
+</html>

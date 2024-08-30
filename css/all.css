@@ -1,6 +1,6 @@
 #body{
-	background-image: url(../img/bg.jpg);
-	background-size: cover;
+	background-image: url(../img/BG.webp);
+	-webkit-tap-highlight-color: rgba(0,0,0,0)
 }
 
 #btdiv{
@@ -25,12 +25,14 @@
       border-radius: 15px;
       font-weight: 1000;
 	  user-select: none; /* 禁止用户选择 */
+	
 }
 #bt1span{
 	user-select: none; /* 禁止用户选择 */
 	display: block;
-	  margin-left: 0.3em;
-	  transition: all 0.3s ease-in-out;
+	margin-left: 0.3em;
+	transition: all 0.3s ease-in-out
+	  
 }
 #uploadid{
 	display: block;
@@ -73,7 +75,7 @@ display: none;
   align-items: center;
   justify-content: center;
   gap: 6px;
-  background-color: rgb(129, 110, 216);
+  background-color: rgb(0, 0, 0);
   border-radius: 10px;
   cursor: pointer;
   border: none;
@@ -257,27 +259,6 @@ display: none;
     
 }
 
-#divbackbtn{
-	display: flex;
-}
-#backBtn{
-	margin-top: 300px;
-	margin-left: 280px;
-	color: #090909;
-	  padding: 8px 16px;
-	  font-size: 15px;
-	  border-radius: 0.5em;
-	  background: #e8e8e8;
-	  cursor: pointer;
-	  border: 1px solid #e8e8e8;
-	  transition: all 0.3s;
-	  box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #ffffff;
-	  
-}
-#backBtn:active{
-	color: #666;
-	box-shadow: inset 4px 4px 12px #c5c5c5, inset -4px -4px 12px #ffffff;
-}
 
 #settingbody{
 	 overflow: hidden; /* 禁用滚动 */

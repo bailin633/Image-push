@@ -40,6 +40,8 @@ window.onload = function() {
             console.error(error);
         });
     });
+	
+
 
     // 处理设置按钮点击事件
     document.getElementById('setting').addEventListener("click", function() {
