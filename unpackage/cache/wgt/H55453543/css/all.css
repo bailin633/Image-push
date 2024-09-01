@@ -96,7 +96,7 @@ display: none;
   content: "";
   width: 2px;
   height: 2px;
-  background-color: rgb(126, 117, 255);
+  background-color: rgb(0, 0, 0);
   position: absolute;
   border-radius: 50%;
   border: 2px solid white;
@@ -150,86 +150,6 @@ display: none;
 
 
 
-#pathModal {
-    display: none; /* 默认隐藏 */
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: #fff;
-    padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 15px; /* 设置圆角 */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 修改阴影效果 */
-    z-index: 1000;
-    width: 400px; /* 设置弹出框宽度 */
-    max-width: 90%; /* 最大宽度为视口宽度的90% */
-    height: 160px; /* 设置弹出框高度 */
-    box-sizing: border-box; /* 包括内边距和边框在内的宽度计算 */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-#pathModal input {
-    width: 100%;
-    padding: 8px;
-    box-sizing: border-box;
-}
-
-#pathModal button {
-    margin-top: 10px;
-}
-
-#savePathBtn {
-    margin-left: 10px; /* 按钮与输入框之间的距离 */
-    color: #090909;
-    padding: 8px 16px;
-    font-size: 15px;
-    border-radius: 0.5em;
-    background: #e8e8e8;
-    cursor: pointer;
-    border: 1px solid #e8e8e8;
-    transition: all 0.3s;
-    box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #ffffff;
-    user-select: none; /* 禁止用户选择 */
-}
-
-#savePathBtn:active {
-    color: #666;
-    box-shadow:
-        0px 0px 0px #c5c5c5,
-        0px 0px 0px #ffffff,
-        inset 4px 4px 12px #c5c5c5,
-        inset -4px -4px 12px #ffffff;
-		user-select: none; /* 禁止用户选择 */
-}
-
-#closePathModalBtn {
-    margin-left: 200px;
-    color: #090909;
-    padding: 3px 0.6px;
-    font-size: 15px;
-    border-radius: 0.5em;
-    background: #e8e8e8;
-    cursor: pointer;
-    border: 1px solid #e8e8e8;
-    transition: all 0.3s;
-    box-shadow:
-        6px 6px 12px #c5c5c5,
-        -6px -6px 12px #ffffff;
-    user-select: none; /* 禁止用户选择 */
-}
-
-#closePathModalBtn:active {
-    color: #666;
-    box-shadow:
-        0px 0px 0px #c5c5c5,
-        0px 0px 0px #ffffff,
-        inset 4px 4px 12px #c5c5c5,
-        inset -4px -4px 12px #ffffff;
-}
-
 #input-container{
 	display: flex;
 	align-items: center;
@@ -272,71 +192,107 @@ display: none;
 	    color: black; /* 可以调整为你喜欢的颜色 */
 		user-select: none;
 }
-#serverAddressInput{
-	 flex-grow: 1; /* 输入框占据剩余空间 */
-	 width: 100%;
-	   max-width: 125px;
-	   height: 18px;
-	   padding: 12px;
-	   border-radius: 12px;
-	   border: 1.5px solid lightgrey;
-	   outline: none;
-	   transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
-	   box-shadow: 0px 0px 20px -18px;
+
+
+/* Terminal styles */
+#terminal {
+    margin-top: -6.5rem; 
+    padding: 1rem;
+    background-color: #2d2d2d;
+    color: #00ff00;
+    font-family: monospace;
+    font-size: 0.875rem;
+    border-radius: 0.5rem;
+    border: 1px solid #444;
+    height: 4rem; /* 初始高度 */
+    overflow-y: auto;
+    transition: height 0.3s; /* 添加过渡效果 */
 }
 
-#pathInput{
-	width: 100%;
-	  max-width: 213px;
-	  height: 18px;
-	  padding: 12px;
-	  border-radius: 12px;
-	  border: 1.5px solid lightgrey;
-	  outline: none;
-	  transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
-	  box-shadow: 0px 0px 20px -18px;
-}
-#pathInput:hover{
-	border: 2px solid lightgrey;
-	  box-shadow: 0px 0px 20px -17px;
-}
-#pathInput:active{
-	transform: scale(0.95);
-}
-#pathInput:focus{
-	border: 2px solid grey;
-}
-#portInput{
-	width: 100%;
-	  max-width: 50px;
-	  height: 18px;
-	  padding: 12px;
-	  border-radius: 12px;
-	  border: 1.5px solid lightgrey;
-	  outline: none;
-	  transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
-	  box-shadow: 0px 0px 20px -18px;
+    #terminal p {
+        margin: 0; /* 移除默认的外边距 */
+        padding: 0; /* 可选: 移除内边距 */
+        margin-top: -10px; /* 向上移动 5px */
+		margin-left: -10px;
+    }
+	
+	#terminal.collapsed {
+	    height: 2px; /* 折叠后的高度 */
+	    overflow: hidden; /* 隐藏内容 */
+	    background-color: black; /* 背景颜色 */
+	}
+	
+	
+    /* Modal styles */
+        #pathModal {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #fff;
+            padding: 20px;
+            border: 1px solid #ddd;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+
+        #pathModal input {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+
+        #pathModal button {
+            margin-top: 10px;
+        }
+		
+		
+#terminalWrapper {
+    position: relative; /* 使按钮可以相对于终端进行定位 */
 }
 
-#saveServerBtn{
-	margin-left: 10px; /* 按钮与输入框之间的距离 */
-	color: #090909;
-	padding: 8px 16px;
-	font-size: 15px;
-	border-radius: 0.5em;
-	background: #e8e8e8;
-	cursor: pointer;
-	border: 1px solid #e8e8e8;
-	transition: all 0.3s;
-	box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #ffffff;
-	user-select: none; /* 禁止用户选择 */
+/* Toggle button styles */
+#toggleTerminal {
+    position: absolute;
+    top: 50%; /* 垂直居中 */
+    right: 10px; /* 距离右边10px */
+    transform: translateY(-50%); /* 垂直居中调整 */
+    width: 45px;
+    height: 1.875rem;
+    background-color: rgb(0, 0, 0);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 0px 0px 2px rgb(212, 209, 255);
+    transition: background-color 0.3s, color 0.3s;
 }
-#saveServerBtn:active{
-	color: #666;
-	box-shadow:
-	    0px 0px 0px #c5c5c5,
-	    0px 0px 0px #ffffff,
-	    inset 4px 4px 12px #c5c5c5,
-	    inset -4px -4px 12px #ffffff;
-		user-select: none; /* 禁止用户选择 */
+
+#toggleTerminal:hover {
+    background-color: #333;
 }
+
+
+/* 时间显示区域样式 */
+#timediv {
+    position: absolute;
+    top: 10px; /* 距离页面顶部10px */
+    left: 10px; /* 距离页面左边10px */
+    background-color: rgba(0, 0, 0, 0.5); /* 半透明背景 */
+    color: white; /* 文本颜色 */
+    padding: 5px 10px; /* 内边距 */
+    border-radius: 5px; /* 圆角边框 */
+    font-size: 14px; /* 字体大小 */
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5); /* 添加阴影 */
+    z-index: 1000; /* 确保在其他元素之上 */
+}
+
+.upload-failed {
+    color: red; /* 设置字体颜色为红色 */
+}
+
+

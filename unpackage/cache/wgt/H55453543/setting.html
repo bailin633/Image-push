@@ -8,23 +8,30 @@
     <title>Settings</title>
 </head>
 <body id="settingbody">
-    <h2>设置页面</h2>
+    <h2 style="user-select: none;">设置页面</h2>
 
-    <label for="pathInput" id="input-label">存储路径:</label>
+    <label style="user-select: none;" for="pathInput" id="input-label">存储路径:</label>
     <!-- 输入框和保存路径按钮 -->
     <div class="input-container">
-        <input type="text" id="pathInput" required="" autocomplete="off" placeholder="输入远程存储路径" />
+        <input type="text" id="pathInput" class="setting_input" required="" autocomplete="off" placeholder="输入远程存储路径" />
         <button id="savePathBtn" class="button button-primary">保存路径</button>
     </div>
 
     <label for="serverAddressInput" id="input-label">服务器地址:</label>
     <!-- 地址和端口输入框 -->
     <div class="input-server">
-        <input type="text" id="serverAddressInput" required="" autocomplete="off" placeholder="输入服务器地址" />
+        <input type="text" id="serverAddressInput" class="setting_input" required="" autocomplete="off" placeholder="输入服务器地址" />
         <span id="colon">:</span>
-        <input type="number" id="portInput" min="1" max="65535" placeholder="端口" />
+        <input type="number" id="portInput" min="1" max="65535" class="setting_input" placeholder="端口" />
         <button id="saveServerBtn" class="button button-primary">保存地址</button>
     </div>
+	
+	<label style="user-select: none;" for="pathInput" id="input-label">UUID设置:</label>
+	<!-- 输入框和保存路径按钮 -->
+	<div class="UUID_setting">
+	    <input type="text" id="uuid_input" class="setting_input" required="" autocomplete="off" placeholder="输入UUID" />
+	    <button id="saveuuidbtn" class="button button-primary">保存UUID</button>
+	</div>
 
     <div id="divbackbtn">
         <button id="backBtn" class="button button-primary">返回</button>

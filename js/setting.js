@@ -14,6 +14,13 @@ window.onload = function() {
     if (storedPort) {
         document.getElementById('portInput').value = storedPort;
     }
+	
+	// 加载UUID的路径（如果有）
+	const uuidpath = localStorage.getItem('uuid');
+	if (uuidpath) {
+	    document.getElementById('uuid_input').value = uuidpath;
+	}
+	
 
     // 点击“保存路径”按钮时保存路径
     document.getElementById('savePathBtn').addEventListener('click', function() {
@@ -30,4 +37,12 @@ window.onload = function() {
         localStorage.setItem('port', port); // 保存端口
         alert('地址和端口已保存');
     });
+	
+	// 点击“保存UUID”按钮时保存路径
+	document.getElementById('saveuuidbtn').addEventListener('click', function() {
+	    const uuid = document.getElementById('uuid_input').value;
+	    localStorage.setItem('uuid', uuid);
+	    alert('UUID已保存');
+	});
+	
 };
