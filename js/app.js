@@ -21,9 +21,25 @@ window.onload = function() {
 
         // 文件分片大小（1MB）
         const chunkSize = 1024 * 1024;
+        
+        // 允许的 MIME 类型
+        const allowedTypes = ['image/jpeg', 'image/png', 'image/gif', 'image/webp', 'video/mp4', 'video/webm', 'video/ogg'];
+
+        // 从 localStorage 读取复选框状态
+        const allowAnyFile = localStorage.getItem('allowAnyFile') === 'true';
+        console.log('允许任何文件:', allowAnyFile);
 
         // 遍历文件进行上传
         Array.from(files).forEach(file => {
+            if (!allowAnyFile && !allowedTypes.includes(file.type)) {
+                const errorEntry = document.createElement('div');
+                errorEntry.className = 'file-entry';
+                errorEntry.innerHTML = `<strong>${file.name}</strong>: 文件类型不允许!`;
+                errorEntry.classList.add('upload-failed'); // 添加失败样式
+                terminal.appendChild(errorEntry);
+                return; // 跳过该文件
+            }
+
             const fileEntry = document.createElement('div');
             fileEntry.className = 'file-entry';
             fileEntry.innerHTML = `<strong>${file.name}</strong>: 上传中...<br><progress value="0" max="100"></progress>`;
